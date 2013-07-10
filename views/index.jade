@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+  
+	#content
+	table
+		for item in bookingsList
+			tr
+				td
+					a(href='/bookings/' + item.id) #{item.name}

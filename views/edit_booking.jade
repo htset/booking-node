@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1 Insert new booking
+
+	form(method="post", action="/bookings/"+#{book._id}) 
+		input(type="hidden", name="booking_id", value="#{book._id}")
+		div
+			label Name:
+			input(type="text", name="name", value="#{book.name}")
+		div
+			label Start date:
+			input(type="text", name="start_date", value="#{book.start_date}")
+		div 
+			label End date:
+				input(type="text", name="end_date", value="#{book.end_date}")
+		div
+			input(type="submit", value="Update")

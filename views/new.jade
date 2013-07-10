@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1 Insert new booking
+
+	form(method="post", action="/bookings") 
+		div
+			label Name:
+			input(type="text", name="name")
+		div
+			label Start date:
+			input(type="text", name="start_date")
+		div 
+			label End date:
+				input(type="text", name="end_date")
+		div
+			input(type="submit", value="Insert new")
