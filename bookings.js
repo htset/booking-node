@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 
 exports.getAllBookings = function(callback) {
 	var Booking = mongoose.model('Booking');
-	console.log('before search');
 	Booking.find(function(err, data){
 		if(err)
 			console.log(err);
@@ -16,7 +15,6 @@ exports.getAllBookings = function(callback) {
 
 exports.getBooking = function(booking_id, callback) {
 	var Booking = mongoose.model('Booking');
-	console.log('before search2');
 	Booking.findOne({_id: booking_id}, function(err, data){
 		if(err)
 			console.log(err);
@@ -36,7 +34,7 @@ exports.insertBooking = function(name_s, start_date_s, end_date_s, callback) {
 		if(err)
 			console.log(err);
 		else{
-			console.log('save successful!');
+			console.log('insert successful!');
 			callback();
 		}
 	});
@@ -57,7 +55,7 @@ exports.updateBooking = function(id_s, name_s, start_date_s, end_date_s, callbac
 			if(err)
 				console.log(err);
 			else{
-				console.log('save successful!');
+				console.log('update successful!');
 				callback();
 			}
 		}
