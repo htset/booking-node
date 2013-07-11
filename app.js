@@ -34,6 +34,7 @@ app.get('/bookings/:id', routes.booking);
 app.get('/bookings/:id/edit', routes.edit_booking);
 app.post('/bookings/:id', routes.update_booking);
 app.post('/bookings', routes.insert_booking);
+app.delete('/bookings/:id', routes.delete_booking);
 app.get('/users', user.list);
 
 

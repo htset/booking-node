@@ -58,3 +58,11 @@ console.log(req.body);
 		res.redirect('/bookings');
 	});
 }
+
+exports.delete_booking = function(req, res){
+console.log(req.params);
+	bookings.deleteBooking(req.params.id, function(err) {
+		console.log('delete Booking: ' + req.params.id);
+		res.send({redirect: '/bookings'});
+	});
+}

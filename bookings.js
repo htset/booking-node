@@ -66,3 +66,21 @@ exports.updateBooking = function(id_s, name_s, start_date_s, end_date_s, callbac
 
 	
 }
+
+exports.deleteBooking = function(id_s, callback) {
+	var Booking = mongoose.model('Booking');
+	Booking.remove(
+		{_id: id_s},
+		function(err, data){
+			if(err)
+				console.log(err);
+			else{
+				console.log('delete successful!');
+				callback();
+			}
+		}
+	);
+
+
+	
+}
