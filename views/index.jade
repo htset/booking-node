@@ -5,8 +5,11 @@ block content
 	p Welcome to #{title}
   
 	#content
-	table
+	table(border="1")
 		for item in bookingsList
 			tr
 				td
 					a(href='/bookings/' + item.id) #{item.name}
+				
+	a(href="/bookings/new") New Booking
+					
